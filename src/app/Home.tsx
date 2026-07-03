@@ -88,7 +88,7 @@ function Hero() {
               width: "365px",
               fontSize: "90px",
               letterSpacing: "0.01em",
-              color: "#ffffff",
+              color: "rgba(255, 255, 255, .6)",
               filter: "drop-shadow(0 2px 0 rgba(0,0,0,0.35)) drop-shadow(0 6px 20px rgba(255,255,255,0.25))",
               WebkitTextStroke: "1px rgba(0,0,0,0.15)",
             }}
