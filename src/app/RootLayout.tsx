@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { Outlet, useLocation } from "react-router";
+import { Outlet, useLocation, useNavigate } from "react-router";
 import { motion, AnimatePresence } from "motion/react";
 
 // ─── Cursor ──────────────────────────────────────────────────────────────────
@@ -133,7 +133,27 @@ function Loader({ onComplete }: { onComplete: () => void }) {
 
 export default function RootLayout() {
   const location = useLocation();
+  const navigate = useNavigate();
   const [loaderDone, setLoaderDone] = useState(false);
+
+  // GitHub Pages SPA 路由恢复：
+  // 404.html 会把用户原本访问的路径写入 sessionStorage，
+  // 页面加载后我们用它跳转到正确的路由，避免刷新直接到首页。
+  useEffect(() => {
+    try {
+      const raw = sessionStorage.getItem('spa-redirect');
+      if (raw) {
+        const info = JSON.parse(raw);
+        sessionStorage.removeItem('spa-redirect');
+        const target = (info.path || '/') + (info.query || '') + (info.hash || '');
+        if (target && target !== location.pathname + location.search + location.hash) {
+          navigate(target, { replace: true });
+        }
+      }
+    } catch (e) {
+      /* ignore */
+    }
+  }, [navigate, location.pathname, location.search, location.hash]);
 
   return (
     <div className="bg-[#040404] min-h-screen cursor-none overflow-x-hidden">
