@@ -82,17 +82,41 @@ function Hero() {
 
         <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4, duration: 0.9, ease: [0.22, 1, 0.36, 1] }}>
-          <span className="font-['Space_Grotesk',sans-serif] font-bold text-white leading-none"
-            style={{ fontSize: "clamp(56px, 9.5vw, 116px)", letterSpacing: "0.1em" }}>
-            2&nbsp;&nbsp;&nbsp;26
+          <span
+            className="font-['Space_Grotesk',sans-serif] font-black leading-none inline-block"
+            style={{
+              fontSize: "clamp(64px, 11vw, 148px)",
+              letterSpacing: "0.04em",
+              backgroundImage:
+                "linear-gradient(135deg,#ffffff 0%,#ffffff 40%,#b9b9b9 55%,#ffffff 70%,#ffffff 100%)",
+              WebkitBackgroundClip: "text",
+              backgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              color: "transparent",
+              filter: "drop-shadow(0 0 24px rgba(255,255,255,0.25))",
+              textShadow: "0 0 40px rgba(255,255,255,0.08)",
+            }}
+          >
+            2026
           </span>
         </motion.div>
 
         <div className="overflow-hidden mt-1">
-          <motion.h1 className="font-['Noto_Serif_SC',serif] font-black text-white leading-none"
-            style={{ fontSize: "clamp(44px, 7.5vw, 100px)" }}
+          <motion.h1
+            className="font-['Noto_Serif_SC',serif] font-black leading-none"
+            style={{
+              fontSize: "clamp(48px, 8vw, 112px)",
+              backgroundImage:
+                "linear-gradient(180deg,#ffffff 0%,#e9e9e9 45%,rgba(255,255,255,0.55) 100%)",
+              WebkitBackgroundClip: "text",
+              backgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              color: "transparent",
+              filter: "drop-shadow(0 4px 18px rgba(255,255,255,0.18))",
+            }}
             initial={{ y: "105%" }} animate={{ y: 0 }}
-            transition={{ delay: 0.55, duration: 1, ease: [0.22, 1, 0.36, 1] }}>
+            transition={{ delay: 0.55, duration: 1, ease: [0.22, 1, 0.36, 1] }}
+          >
             设计作品集
           </motion.h1>
         </div>
