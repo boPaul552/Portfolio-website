@@ -4,10 +4,11 @@
     <meta charset="utf-8" />
     <title>bo-Paul Portfolio</title>
     <script>
-      // GitHub Pages SPA 路由回退方案：
-      // 访问任何不存在的路径（如 /project/xxx ）时，
-      // Pages 会返回本 404.html。我们把原始路径保存到 sessionStorage，
-      // 然后跳转回 index.html，App 启动后再把路径恢复到浏览器地址栏。
+      // GitHub Pages SPA 路由回退方案。
+      // 当用户直接访问 /project/xxx 或刷新页面时，
+      // Pages 找不到对应文件，会返回本 404.html。
+      // 我们把原始路径保存到 sessionStorage，再跳回 index.html，
+      // App 启动后由 RootLayout 里的 useEffect 恢复为真正的路由。
       (function () {
         var l = window.location;
         var path = l.pathname.replace(/\/+$/, '') || '/';
@@ -19,7 +20,9 @@
             JSON.stringify({ path: path, query: query, hash: hash })
           );
         } catch (e) {}
-        l.replace('./' + (hash || ''));
+        // 跳回仓库根目录下的 index.html（base='./' 时，根目录就是站点根）
+        var root = l.pathname.substring(0, l.pathname.lastIndexOf('/') + 1);
+        l.replace(root + (hash || ''));
       })();
     </script>
   </head>
