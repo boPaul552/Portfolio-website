@@ -85,7 +85,8 @@ function Hero() {
           <span
             className="font-['Poppins','Inter',sans-serif] font-black leading-none inline-block"
             style={{
-              fontSize: "clamp(64px, 11vw, 148px)",
+              width: "365px",
+              fontSize: "90px",
               letterSpacing: "0.01em",
               color: "#ffffff",
               filter: "drop-shadow(0 2px 0 rgba(0,0,0,0.35)) drop-shadow(0 6px 20px rgba(255,255,255,0.25))",
@@ -100,7 +101,7 @@ function Hero() {
           <motion.h1
             className="font-['Noto_Sans_SC','PingFang_SC',sans-serif] font-black leading-none"
             style={{
-              fontSize: "clamp(48px, 8vw, 112px)",
+              fontSize: "120px",
               letterSpacing: "0.02em",
               color: "#ffffff",
               filter: "drop-shadow(0 2px 0 rgba(0,0,0,0.35)) drop-shadow(0 6px 20px rgba(255,255,255,0.22))",
