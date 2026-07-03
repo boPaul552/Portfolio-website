@@ -83,7 +83,7 @@ function Hero() {
         <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4, duration: 0.9, ease: [0.22, 1, 0.36, 1] }}>
           <span
-            className="font-['Space_Grotesk',sans-serif] font-black leading-none inline-block"
+            className="font-['Playfair_Display',serif] font-black leading-none inline-block tracking-[0.02em]"
             style={{
               fontSize: "clamp(64px, 11vw, 148px)",
               letterSpacing: "0.04em",
@@ -103,16 +103,17 @@ function Hero() {
 
         <div className="overflow-hidden mt-1">
           <motion.h1
-            className="font-['Noto_Serif_SC',serif] font-black leading-none"
+            className="font-['Noto_Serif_SC','Songti_SC',serif] font-black leading-none"
             style={{
               fontSize: "clamp(48px, 8vw, 112px)",
+              letterSpacing: "0.08em",
               backgroundImage:
-                "linear-gradient(180deg,#ffffff 0%,#e9e9e9 45%,rgba(255,255,255,0.55) 100%)",
+                "linear-gradient(180deg,#ffffff 0%,#f0f0f0 50%,#c8c8c8 100%)",
               WebkitBackgroundClip: "text",
               backgroundClip: "text",
               WebkitTextFillColor: "transparent",
               color: "transparent",
-              filter: "drop-shadow(0 4px 18px rgba(255,255,255,0.18))",
+              filter: "drop-shadow(0 4px 18px rgba(255,255,255,0.22))",
             }}
             initial={{ y: "105%" }} animate={{ y: 0 }}
             transition={{ delay: 0.55, duration: 1, ease: [0.22, 1, 0.36, 1] }}
