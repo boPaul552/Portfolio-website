@@ -30,7 +30,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build
+      - name: Build (with GitHub Pages sub-path as base)
+        env:
+          VITE_BASE: /${{ github.event.repository.name }}/
         run: npm run build
 
       - name: Setup Pages

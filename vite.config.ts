@@ -17,7 +17,10 @@ function figmaAssetResolver() {
 }
 
 export default defineConfig({
-  base: './',
+  // 本地开发时用默认的 / ；部署到 GitHub Pages 子路径时，
+  // 通过环境变量 VITE_BASE 传入 /<repo-name>/ ，
+  // 使构建产物里的资源引用路径也跟着变，避免资源 404。
+  base: process.env.VITE_BASE || "/",
   plugins: [
     figmaAssetResolver(),
     // The React and Tailwind plugins are both required for Make, even if
@@ -34,4 +37,5 @@ export default defineConfig({
 
   // File types to support raw imports. Never add .css, .tsx, or .ts files to this.
   assetsInclude: ['**/*.svg', '**/*.csv'],
-})
+});
+
