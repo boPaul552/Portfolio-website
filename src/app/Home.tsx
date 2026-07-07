@@ -57,88 +57,200 @@ function Hero() {
   const fade = useTransform(scrollYProgress, [0, 0.75], [1, 0]);
 
   return (
-    <section ref={ref} className="relative h-screen overflow-hidden" style={{ position: "relative" }}>
+    <section ref={ref} className="relative h-screen overflow-hidden bg-[#040404]" style={{ position: "relative" }}>
+
+      {/* ── 顶部状态栏 ─────────────────────────────────────── */}
+      <motion.div
+        className="absolute top-0 left-0 right-0 z-30 flex items-center justify-between px-6 md:px-10 py-3 border-b border-white/10"
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.25, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+      >
+        <div />
+
+        <div />
+
+        <button data-cursor className="font-['JetBrains_Mono',monospace] text-[#040404] text-[11px] bg-[#c6ff8a] px-3 py-1.5 rounded-sm tracking-wider hover:bg-white transition-colors"
+          style={{ boxShadow: "0 0 18px rgba(198,255,138,0.35)" }}>
+          GET IN TOUCH →
+        </button>
+      </motion.div>
+
+      {/* ── 背景图片 + 暗部处理 ───────────────────────────── */}
       <motion.div className="absolute inset-0" style={{ y: imgY }}>
         <img src={heroImg} alt="" className="w-full h-[115%] object-cover object-center" />
         <div className="absolute inset-0" style={{
-          background: "linear-gradient(to bottom, #040404 0%, transparent 14%), linear-gradient(to top, #040404 0%, transparent 18%), radial-gradient(ellipse at 62% 32%, transparent 35%, rgba(0,0,0,0.75) 100%)",
+          background: "linear-gradient(to right, #040404 0%, rgba(4,4,4,0.85) 30%, rgba(4,4,4,0.55) 55%, rgba(4,4,4,0.92) 100%), linear-gradient(to bottom, rgba(4,4,4,0.4) 0%, transparent 18%), linear-gradient(to top, #040404 0%, transparent 22%)",
+        }} />
+        {/* 网点（halftone）覆盖 — Mauricio 风格 */}
+        <div className="absolute inset-0 pointer-events-none" style={{
+          backgroundImage: "radial-gradient(rgba(0,0,0,0.55) 1px, transparent 1px)",
+          backgroundSize: "4px 4px",
+          opacity: 0.65,
+          mixBlendMode: "multiply",
+        }} />
+        <div className="absolute inset-0 pointer-events-none" style={{
+          backgroundImage: "radial-gradient(rgba(255,255,255,0.04) 1px, transparent 1px)",
+          backgroundSize: "6px 6px",
+          opacity: 0.85,
+          mixBlendMode: "screen",
         }} />
       </motion.div>
 
-      {/* Side text */}
-      <div className="absolute right-10 top-1/2 -translate-y-1/2 z-10 hidden md:block">
-        <p className="font-['JetBrains_Mono',monospace] text-white/25 text-[11px] tracking-[0.28em] uppercase whitespace-nowrap"
-          style={{ writingMode: "vertical-rl", transform: "rotate(180deg)" }}>
-          Everything is permitted
-        </p>
-      </div>
+      <motion.div className="relative z-10 h-full flex flex-col justify-between px-6 md:px-10 pt-20 pb-6" style={{ opacity: fade }}>
 
-      <motion.div className="absolute inset-0 flex flex-col justify-center px-8 md:px-14 z-10" style={{ opacity: fade }}>
-        <motion.p className="font-['JetBrains_Mono',monospace] text-white/45 text-sm mb-10"
-          initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3, duration: 0.7 }}>
-          Hello, i'm a UI designer.
-        </motion.p>
-
-        <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4, duration: 0.9, ease: [0.22, 1, 0.36, 1] }}>
-          <span
-            className="font-['Poppins','Inter',sans-serif] font-black leading-none inline-block"
-            style={{
-              width: "365px",
-              fontSize: "90px",
-              letterSpacing: "0.01em",
-              color: "rgba(255, 255, 255, .6)",
-              filter: "drop-shadow(0 2px 0 rgba(0,0,0,0.35)) drop-shadow(0 6px 20px rgba(255,255,255,0.25))",
-              WebkitTextStroke: "1px rgba(0,0,0,0.15)",
-            }}
-          >
-            2026
-          </span>
+        {/* ── 中上：Staff Design Engineer 标签 ─────────── */}
+        <motion.div
+          className="md:mt-4"
+          style={{ width: "500px", marginTop: "32px", marginBottom: "8px" }}
+          initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.45, duration: 0.8 }}
+        >
+          <p className="font-['Space_Grotesk',sans-serif] font-bold text-[#f0ede8] text-[13px] tracking-[0.18em] uppercase"
+            style={{ width: "500px" }}>
+            UI Interaction Designer
+          </p>
+          <p className="font-['JetBrains_Mono',monospace] text-white/28 text-[10px] tracking-widest uppercase"
+            style={{ width: "500px", marginBottom: "4px" }}>
+            System Design · Enterprise Backends · Intelligent Products
+          </p>
         </motion.div>
 
-        <div className="overflow-hidden mt-1">
-          <motion.h1
-            className="font-['Noto_Sans_SC','PingFang_SC',sans-serif] font-black leading-none"
-            style={{
-              fontSize: "120px",
-              letterSpacing: "0.02em",
-              color: "#ffffff",
-              filter: "drop-shadow(0 2px 0 rgba(0,0,0,0.35)) drop-shadow(0 6px 20px rgba(255,255,255,0.22))",
-              WebkitTextStroke: "1px rgba(0,0,0,0.15)",
-            }}
-            initial={{ y: "105%" }} animate={{ y: 0 }}
-            transition={{ delay: 0.55, duration: 1, ease: [0.22, 1, 0.36, 1] }}
+        {/* ── 中部：主标题 + 人像 ───────────────────────── */}
+        <div className="flex-1 flex items-end md:items-center justify-between gap-6 mt-6">
+
+          {/* 左侧文字区 */}
+          <div className="flex-1 min-w-0">
+
+            <motion.span
+              className="font-['Poppins','Inter',sans-serif] font-black leading-[0.82] block tracking-tight"
+              style={{
+                fontSize: "clamp(64px, 12vw, 170px)",
+                color: "#f0ede8",
+                filter: "drop-shadow(0 4px 0 rgba(0,0,0,0.55)) drop-shadow(0 18px 40px rgba(198,255,138,0.08))",
+              }}
+              initial={{ y: 80, opacity: 0 }} animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.5, duration: 1.05, ease: [0.22, 1, 0.36, 1] }}
+            >
+              bo-Paul's
+            </motion.span>
+
+            <div className="overflow-hidden">
+              <motion.span
+                className="font-['Poppins','Inter',sans-serif] font-black leading-[0.82] block tracking-tight"
+                style={{
+                  fontSize: "clamp(64px, 12vw, 170px)",
+                  color: "#c6ff8a",
+                  filter: "drop-shadow(0 4px 0 rgba(0,0,0,0.55)) drop-shadow(0 16px 42px rgba(198,255,138,0.35))",
+                }}
+                initial={{ y: "110%" }} animate={{ y: 0 }}
+                transition={{ delay: 0.62, duration: 1.05, ease: [0.22, 1, 0.36, 1] }}
+              >
+                PORTFOLIO
+              </motion.span>
+            </div>
+
+            {/* 副标题 / 中文介绍 */}
+            <motion.div
+              className="mt-6 flex flex-wrap items-center gap-4 md:gap-6"
+              initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.95, duration: 0.7 }}
+            >
+              <span className="font-['Noto_Sans_SC','PingFang_SC',sans-serif] font-black text-[28px] md:text-[40px] tracking-tight"
+                style={{
+                  color: "#f0ede8",
+                  filter: "drop-shadow(0 4px 0 rgba(0,0,0,0.55)) drop-shadow(0 16px 32px rgba(198,255,138,0.12))",
+                }}>
+                设计作品集
+              </span>
+              <span className="font-['Poppins',sans-serif] font-black text-[28px] md:text-[40px] tracking-tight"
+                style={{
+                  color: "#c6ff8a",
+                  filter: "drop-shadow(0 4px 0 rgba(0,0,0,0.55)) drop-shadow(0 14px 28px rgba(198,255,138,0.35))",
+                }}>
+                2026
+              </span>
+            </motion.div>
+
+            {/* 徽章 + 介绍 */}
+            <motion.p
+              className="font-['Noto_Serif_SC',serif] text-white/45 text-sm md:text-base leading-relaxed max-w-xl mt-6"
+              initial={{ opacity: 0 }} animate={{ opacity: 1 }}
+              transition={{ delay: 1.1, duration: 0.7 }}
+            >
+              bo-Paul — 专注界面设计与视觉探索的 UI 设计师。
+              从品牌系统到移动应用，尝试在每一个项目中找到独特的视觉语言。
+            </motion.p>
+
+            {/* CTA */}
+            <motion.div
+              className="mt-7 flex flex-wrap items-center gap-4"
+              initial={{ opacity: 0 }} animate={{ opacity: 1 }}
+              transition={{ delay: 1.25, duration: 0.7 }}
+            >
+              <button data-cursor onClick={() => document.getElementById("works")?.scrollIntoView({ behavior: "smooth" })}
+                className="font-['JetBrains_Mono',monospace] text-[#040404] text-xs bg-[#c6ff8a] px-5 py-2.5 tracking-wider hover:bg-white transition-colors"
+                style={{ boxShadow: "0 0 18px rgba(198,255,138,0.3)" }}>
+                查看作品 →
+              </button>
+              <span className="font-['JetBrains_Mono',monospace] text-white/35 text-xs tracking-widest">
+                WeChat · 173 2297 5039
+              </span>
+            </motion.div>
+          </div>
+
+          {/* 右侧人像（Mauricio 风格）— 桌面端显示 */}
+          <motion.div
+            className="hidden md:block relative flex-shrink-0"
+            style={{ width: "min(36vw, 480px)" }}
+            initial={{ opacity: 0, x: 40 }} animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.55, duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
           >
-            设计作品集
-          </motion.h1>
+            <div className="relative" style={{ aspectRatio: "3 / 4" }}>
+              <img src={heroImg} alt="" className="absolute inset-0 w-full h-full object-cover object-center" style={{
+                filter: "grayscale(1) contrast(1.15) brightness(0.95)",
+                maskImage: "linear-gradient(to bottom, black 55%, transparent 100%), linear-gradient(to right, black 70%, transparent 100%)",
+                WebkitMaskImage: "linear-gradient(to bottom, black 55%, transparent 100%), linear-gradient(to right, black 70%, transparent 100%)",
+                maskComposite: "intersect",
+                WebkitMaskComposite: "source-in",
+              }} />
+              {/* 网点叠加 */}
+              <div className="absolute inset-0" style={{
+                backgroundImage: "radial-gradient(rgba(198,255,138,0.15) 1.2px, transparent 1.2px)",
+                backgroundSize: "5px 5px",
+                mixBlendMode: "screen",
+              }} />
+              <div className="absolute inset-0" style={{
+                background: "linear-gradient(to bottom, transparent 0%, rgba(4,4,4,0.35) 55%, #040404 100%), linear-gradient(to left, transparent 55%, rgba(4,4,4,0.6) 85%, #040404 100%)",
+              }} />
+              {/* 右上角小标签 */}
+              <div className="absolute top-3 right-3 flex items-center gap-1.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#c6ff8a]" style={{ boxShadow: "0 0 8px #c6ff8a" }} />
+                <span className="font-['JetBrains_Mono',monospace] text-white/50 text-[10px] tracking-widest">LIVE</span>
+              </div>
+            </div>
+          </motion.div>
         </div>
 
-        <motion.p className="font-['JetBrains_Mono',monospace] text-white/40 text-sm mt-8 max-w-md leading-relaxed"
-          initial={{ opacity: 0 }} animate={{ opacity: 1 }}
-          transition={{ delay: 0.9, duration: 0.7 }}>
-          Add my WeChat: <span className="text-white/65">173 2297 5039</span>
-        </motion.p>
-      </motion.div>
+        {/* ── 底部装饰 ──────────────────────────────── */}
+        <motion.div
+          className="mt-6 border-t border-white/10 pt-4 flex items-center justify-between"
+          initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1.3, duration: 0.7 }}
+        >
+          <div className="flex items-center gap-2">
+            <span className="w-2.5 h-2.5 rounded-sm bg-[#c6ff8a]" style={{ boxShadow: "0 0 8px #c6ff8a" }} />
+            <span className="w-2.5 h-2.5 rounded-full bg-white/25" />
+            <span className="w-2.5 h-2.5 rounded-full bg-white/15" />
+          </div>
 
-      {/* Bottom bar */}
-      <div className="absolute bottom-0 left-0 right-0 flex items-end justify-between px-8 md:px-14 pb-8 z-10">
-        <motion.div className="flex items-center gap-2" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.05, duration: 0.7 }}>
-          <div className="w-2 h-2 rounded-full bg-white/40" />
-          <span className="font-['JetBrains_Mono',monospace] text-white/35 text-xs">Cease 2024~2026</span>
+          <button data-cursor onClick={() => document.getElementById("works")?.scrollIntoView({ behavior: "smooth" })}
+            className="font-['JetBrains_Mono',monospace] text-white/35 text-[11px] tracking-widest hover:text-white/70 transition-colors flex items-center gap-2">
+            <span className="animate-bounce">↓</span>
+          </button>
         </motion.div>
 
-        <motion.p className="font-['Noto_Serif_SC',serif] text-white/35 text-xs text-center leading-relaxed hidden md:block"
-          initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.1, duration: 0.7 }}>
-          「生命的每一刻都是走出旧路的新起点，就在此时此地，这一刻就是我的新起点」
-        </motion.p>
-
-        <motion.button data-cursor onClick={() => document.getElementById("works")?.scrollIntoView({ behavior: "smooth" })}
-          className="font-['JetBrains_Mono',monospace] text-white/35 text-[11px] tracking-widest hover:text-white/65 transition-colors"
-          initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.15, duration: 0.7 }}>
-          SCROLL ↓
-        </motion.button>
-      </div>
+      </motion.div>
     </section>
   );
 }

@@ -569,7 +569,7 @@ export const PROJECTS: Project[] = [
     id: "type-lab",
     title: "广州市政务区块链基础平台 V2.0 · 数据可视化大屏",
     titleEn: "GZ Gov Blockchain Platform V2.0 — Data Visualization Dashboard",
-    category: "experience",
+    category: "visual",
     year: "2025",
     role: "UI 设计师 / 数据可视化",
     duration: "持续迭代",
