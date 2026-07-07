@@ -106,8 +106,8 @@ export const PROJECTS: Project[] = [
     title: "链码电子签 · 体验升级重塑",
     titleEn: "Chaincode E-Sign — UX Redesign",
     category: "stories",
-    year: "2024—2025",
-    role: "UI 设计师 / UX Research",
+    year: "2025-2026",
+    role: "UI/UX 设计师",
     duration: "持续迭代",
     tags: ["UX Design", "B 端产品", "区块链", "体验升级", "交互重塑"],
     description:
@@ -476,99 +476,9 @@ export const PROJECTS: Project[] = [
   },
 
   {
-    id: "design-system",
-    title: "设计系统构建",
-    titleEn: "Design System Build",
-    category: "experience",
-    year: "2024",
-    role: "Design System Lead",
-    duration: "6 个月",
-    tags: ["Design System", "Components", "Figma", "规范"],
-    description: "从零搭建企业级设计系统，打通设计与开发协作流程。",
-    overview:
-      "主导一个中型 SaaS 产品的设计系统从 0 到 1 的建设。从原子级色彩、字体、间距规范开始，逐步构建组件库、模式库，最终形成覆盖 150+ 组件的完整设计系统，大幅提升团队协作效率。",
-    challenge:
-      "设计系统的最大挑战不在于设计本身，而在于如何让团队真正用起来。需要在灵活性与一致性之间找到精确的平衡点，并建立可持续维护的机制。",
-    accent: "#1a0d0d",
-    index: "005",
-    heroImage: u("photo-1522542550221-31fd19575a2d", 1920),
-    images: [
-      { url: u("photo-1680016661694-1cd3faf31c3a", 1200), alt: "设计系统文档", section: "组件规范", caption: "组件文档与规范" },
-      { url: u("photo-1561070791-36c11767b26a", 900), alt: "色彩系统", caption: "色彩 Token 体系" },
-      { url: u("photo-1522542550221-31fd19575a2d", 1200), alt: "组件概览", section: "核心组件", caption: "核心组件库一览" },
-    ],
-    horizontalStrip: [
-      u("photo-1522542550221-31fd19575a2d", 800),
-      u("photo-1680016661694-1cd3faf31c3a", 800),
-      u("photo-1561070791-36c11767b26a", 800),
-      u("photo-1522542550221-31fd19575a2d", 800),
-    ],
-  },
-
-  {
-    id: "dashboard",
-    title: "极简仪表板",
-    titleEn: "Minimal Dashboard",
-    category: "experience",
-    year: "2024",
-    role: "UI Designer / Prototyper",
-    duration: "6 周",
-    tags: ["Dashboard", "Data Viz", "Dark UI", "数据可视化"],
-    description: "用极简主义原则重新诠释复杂数据仪表板，在密度与可读性间寻找平衡。",
-    overview:
-      "为一款工业监控 SaaS 产品重新设计数据仪表板。在保留全部数据维度的前提下，通过视觉层级的精准控制和合理的信息分组，将信息密度降低 40%，同时保留所有关键指标的可见性。",
-    challenge:
-      "原有界面包含 80+ 个数据指标，用户反馈「看不懂、找不到、记不住」。如何在不删减数据的前提下，重建认知秩序是本次设计的核心命题。",
-    accent: "#0d1a1a",
-    index: "006",
-    heroImage: u("photo-1720962158813-29b66b8e23e1", 1920),
-    images: [
-      { url: u("photo-1720962158883-b0f2021fb51e", 900), alt: "移动端仪表板", section: "响应式", caption: "移动端响应式适配" },
-      { url: u("photo-1720962158937-7ea890052166", 900), alt: "控制面板", caption: "监控控制台模块" },
-      { url: u("photo-1720962158813-29b66b8e23e1", 1200), alt: "主仪表板", section: "主界面", caption: "主仪表板界面" },
-    ],
-    horizontalStrip: [
-      u("photo-1720962158813-29b66b8e23e1", 800),
-      u("photo-1720962158883-b0f2021fb51e", 800),
-      u("photo-1720962158937-7ea890052166", 800),
-      u("photo-1720962158813-29b66b8e23e1", 800),
-    ],
-  },
-
-  {
-    id: "spatial-photo",
-    title: "空间摄影集",
-    titleEn: "Spatial Photography",
-    category: "visual",
-    year: "2025",
-    role: "Photographer / Art Director",
-    duration: "持续创作",
-    tags: ["Photography", "Layout", "排版", "空间"],
-    description: "探索建筑与光线的对话关系，将摄影作品编排成具有节奏感的视觉序列。",
-    overview:
-      "以空间叙事为主轴，记录光线与建筑结构之间的瞬时对话。这组作品跨越两年时间，横贯多个城市，试图用影像语言捕捉那些通常被人忽略的空间诗意——光影的边界、材质的呼吸、空旷的重量。",
-    challenge:
-      "摄影本质上是二维的，但空间体验是三维甚至四维的（加入时间维度）。如何在静态图像中传递空间的流动感与时间性，是贯穿这个系列的核心探索。",
-    accent: "#14101a",
-    index: "007",
-    heroImage: u("photo-1774516534097-76eb46de7229", 1920),
-    images: [
-      { url: u("photo-1776657215949-1b7fce8cd351", 900), alt: "庭院", section: "No.1", caption: "庭院 — 枯石与草" },
-      { url: u("photo-1681684563211-7fb10143157a", 900), alt: "空室", section: "No.2", caption: "空室 — 余光与木纹" },
-      { url: u("photo-1774516534097-76eb46de7229", 1200), alt: "混凝土空间", section: "No.3", caption: "混凝土·窗·光" },
-    ],
-    horizontalStrip: [
-      u("photo-1774516534097-76eb46de7229", 800),
-      u("photo-1776657215949-1b7fce8cd351", 800),
-      u("photo-1681684563211-7fb10143157a", 800),
-      u("photo-1774516534097-76eb46de7229", 800),
-    ],
-  },
-
-  {
     id: "type-lab",
-    title: "广州市政务区块链基础平台 V2.0 · 数据可视化大屏",
-    titleEn: "GZ Gov Blockchain Platform V2.0 — Data Visualization Dashboard",
+    title: "广州市政务区块链基础平台 · 数据可视化大屏",
+    titleEn: "GZ Gov Blockchain Platform — Data Visualization Dashboard",
     category: "visual",
     year: "2025",
     role: "UI 设计师 / 数据可视化",
@@ -581,14 +491,14 @@ export const PROJECTS: Project[] = [
     challenge:
       "政务可视化大屏设计面临双重挑战：一方面要在单屏中承载海量指标（存证次数、业务数据量、节点状态、区块链运行数据等），让信息层级清晰、阅读路径自然；另一方面必须在视觉语言上兼顾权威感与科技感，以 2D 简化地图 + 分层点位的方式呈现动态点位信息，满足低开发与低运维成本的平衡。",
     accent: "#0a1530",
-    index: "008",
+    index: "005",
     heroImage: dt1,
     images: [
       {
         url: dt1,
-        alt: "项目封面 · 广州市政务区块链基础平台 V2.0",
+        alt: "项目封面 · 广州市政务区块链基础平台",
         section: "项目封面",
-        caption: "广州市政务区块链基础平台 V2.0 — 全域总览大屏封面，以广州行政区划地图为视觉中心，叠加业务数据与节点指标",
+        caption: "广州市政务区块链基础平台 — 全域总览大屏封面，以广州行政区划地图为视觉中心，叠加业务数据与节点指标",
       },
       {
         url: dt2,
