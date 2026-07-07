@@ -557,6 +557,39 @@ export const PROJECTS: Project[] = [
     ],
     horizontalStrip: [dt1, dt2, dt3, dt4, dt5, dt6, dt7, dt8, dt9, dt10],
   },
+
+  {
+    id: "bulletin-board",
+    title: "布告板",
+    titleEn: "Bulletin Board · UI Design",
+    category: "experience",
+    year: "2025",
+    role: "UI/UX Designer",
+    duration: "4 个月",
+    tags: ["UI Design", "Mobile App", "产品设计", "界面设计", "交互设计"],
+    description: "完成一款「布告板」发布/招募/应征的应用，独具风格化的界面语言，独立负责界面设计，最终投入使用。",
+    overview:
+      "布告板是一款面向本地生活场景的信息发布与招募应用，以米色质感与现代极简为核心视觉语言。从首页信息流、发布流程、到个人主页，项目以清晰的信息层级与温暖的视觉语言，搭建出一个让用户感受到真实生活质感的产品。",
+    challenge:
+      "如何让信息密度较高的布告/公告场景，既保持清晰的阅读节奏，又能通过视觉语言传递独特的品牌气质，是本次设计的核心探索。",
+    accent: "#1c1c1a",
+    index: "006",
+    heroImage: u("photo-1611162617213-7d7a39e9b1d7", 1920),
+    images: [
+      { url: u("photo-1611162617213-7d7a39e9b1d7", 1200), alt: "项目封面", section: "项目封面", caption: "布告板 — 发布/招募/应征一体的本地生活平台界面设计" },
+      { url: u("photo-1611606063065-ee88c679d4e8", 900), alt: "首页信息流", section: "核心界面", caption: "首页信息流设计：简洁搜索、分类入口与公告信息的层级组织" },
+      { url: u("photo-1611605698335-8b1569810432", 900), alt: "发布与报名", section: "发布流程", caption: "发布、报名与应征流程，以温暖米色系搭配现代字体，提升阅读友好度" },
+      { url: u("photo-1522199755839-a2bacb67c546", 1200), alt: "模块展示", section: "Overview of works", caption: "完整页面模块一览：首页、发布页、详情页、我的主页与通知中心" },
+      { url: u("photo-1551650975-87deedd944c3", 900), alt: "列表与卡片", caption: "公告列表与卡片信息 — 以简约排版呈现标题、时间与关键状态" },
+    ],
+    horizontalStrip: [
+      u("photo-1611162617213-7d7a39e9b1d7", 800),
+      u("photo-1611606063065-ee88c679d4e8", 800),
+      u("photo-1551650975-87deedd944c3", 800),
+      u("photo-1522199755839-a2bacb67c546", 800),
+      u("photo-1611605698335-8b1569810432", 800),
+    ],
+  },
 ];
 
 export const CATEGORIES = [
