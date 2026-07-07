@@ -227,33 +227,37 @@ function Overview({ project }: { project: typeof PROJECTS[0] }) {
         </motion.div>
 
         <div className="space-y-10">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-60px" }}
-            transition={{ duration: 0.75, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-          >
-            <p className="font-['JetBrains_Mono',monospace] text-white/22 text-[10px] tracking-[0.32em] uppercase mb-5">
-              Overview
-            </p>
-            <p className="font-['Noto_Serif_SC',serif] text-white/70 leading-[1.95] text-base md:text-lg">
-              {project.overview}
-            </p>
-          </motion.div>
+          {project.overview && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ duration: 0.75, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+            >
+              <p className="font-['JetBrains_Mono',monospace] text-white/22 text-[10px] tracking-[0.32em] uppercase mb-5">
+                Overview
+              </p>
+              <p className="font-['Noto_Serif_SC',serif] text-white/70 leading-[1.95] text-base md:text-lg">
+                {project.overview}
+              </p>
+            </motion.div>
+          )}
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-60px" }}
-            transition={{ duration: 0.75, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-          >
-            <p className="font-['JetBrains_Mono',monospace] text-white/22 text-[10px] tracking-[0.32em] uppercase mb-5">
-              Challenge
-            </p>
-            <p className="font-['Noto_Serif_SC',serif] text-white/45 leading-[1.95] text-sm md:text-base italic">
-              "{project.challenge}"
-            </p>
-          </motion.div>
+          {project.challenge && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ duration: 0.75, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+            >
+              <p className="font-['JetBrains_Mono',monospace] text-white/22 text-[10px] tracking-[0.32em] uppercase mb-5">
+                Challenge
+              </p>
+              <p className="font-['Noto_Serif_SC',serif] text-white/45 leading-[1.95] text-sm md:text-base italic">
+                "{project.challenge}"
+              </p>
+            </motion.div>
+          )}
         </div>
       </div>
     </div>
