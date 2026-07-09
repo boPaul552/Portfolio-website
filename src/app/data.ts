@@ -66,6 +66,14 @@ import dt8  from "@/imports/Desktop - 8.jpg";
 import dt9  from "@/imports/Desktop - 9.jpg";
 import dt10 from "@/imports/Desktop - 10.jpg";
 
+// ─── Local project images — 项目008（时尚包装印刷品牌网站） ──────
+import fpHome1 from "@/imports/Home-包装印刷.png";
+import fpHome2 from "@/imports/Home-Blog.png";
+import fpProduct from "@/imports/Products - Hanging Tag.png";
+import fpCosmetic from "@/imports/Solutions - For Cosmetic & Beauty.png";
+import fpJewelry from "@/imports/Solutions - For Jewelry & Luxury.png";
+import fpContact from "@/imports/Contact us.png";
+
 // ─── Local project images — 项目007（工业包装产品网站） ──────
 import ipHome from "@/imports/home页面.png";
 import ipProd from "@/imports/products页面.png";
@@ -618,6 +626,32 @@ export const PROJECTS: Project[] = [
       { url: ipThank, alt: "定制询盘提交页", caption: "定制询盘提交页 — Custom Brief Received 成功确认" },
     ],
     horizontalStrip: [ipHome, ipProd, ipSleeve, ipDetail, ipBlog, ipBlogSingle, ip404, ipThank],
+  },
+
+  {
+    id: "fashion-packaging",
+    title: "时尚包装与印刷品牌站",
+    titleEn: "Fashion Packaging & Printing Brand Website",
+    category: "stories",
+    year: "2026",
+    role: "UI Designer",
+    duration: "—",
+    tags: ["Web Design", "品牌网站", "印刷包装", "时尚"],
+    description: "为时尚品牌与服装行业提供一站式包装印刷解决方案的品牌网站，包含产品展示、行业解决方案与客户案例。",
+    overview: "以浅米色与精致排版的配色体系，呈现印刷包装的品质感与品牌调性，突出行业解决方案与一站式服务。",
+    challenge: "如何在多个行业品类中保持视觉语言的统一性，同时让每个方案页具备独特的行业气质与信息架构。",
+    accent: "#e8e0d0",
+    index: "008",
+    heroImage: fpHome1,
+    images: [
+      { url: fpHome1, alt: "首页 · 包装印刷", caption: "首页 — Hero 区、产品分类与服务介绍" },
+      { url: fpHome2, alt: "首页 · 博客", caption: "博客风格首页 — 最新文章、客户评价与行动号召" },
+      { url: fpProduct, alt: "产品 · Hanging Tag", caption: "Products — Hanging Tag 吊牌与标签产品展示" },
+      { url: fpCosmetic, alt: "行业解决方案 · Cosmetic & Beauty", caption: "Solutions — 美妆美容行业定制包装方案" },
+      { url: fpJewelry, alt: "行业解决方案 · Jewelry & Luxury", caption: "Solutions — 珠宝与奢侈品高端包装解决方案" },
+      { url: fpContact, alt: "联系我们", caption: "Contact Us — 咨询与定制联系入口" },
+    ],
+    horizontalStrip: [fpHome1, fpProduct, fpCosmetic, fpJewelry, fpHome2, fpContact],
   },
 ];
 
