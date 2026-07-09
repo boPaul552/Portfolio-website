@@ -66,6 +66,12 @@ import dt8  from "@/imports/Desktop - 8.jpg";
 import dt9  from "@/imports/Desktop - 9.jpg";
 import dt10 from "@/imports/Desktop - 10.jpg";
 
+// ─── Local project images — 项目007（工业包装产品网站） ──────
+import ipHome from "@/imports/home页面.png";
+import ipProd from "@/imports/products页面.png";
+import ipSleeve from "@/imports/Sleeve Pack Containers.png";
+import ipDetail from "@/imports/Sleeve Pack Containers-产品详情页模板.png";
+
 // ─── Local project images — 项目006（布告板） ───────────────
 import bboard from "@/imports/40.jpg";
 
@@ -563,7 +569,7 @@ export const PROJECTS: Project[] = [
 
   {
     id: "bulletin-board",
-    title: "布告板",
+    title: "布告板·发布招募/应征社交App",
     titleEn: "Bulletin Board · UI Design",
     category: "experience",
     year: "2025",
@@ -580,6 +586,30 @@ export const PROJECTS: Project[] = [
       { url: bboard, alt: "布告板 · 项目整体展示", caption: "完整界面一览：首页、发布页、详情页、我的主页与通知中心" },
     ],
     horizontalStrip: [bboard],
+  },
+
+  {
+    id: "industrial-packaging",
+    title: "工业包装产品官网",
+    titleEn: "Industrial Packaging Products Website",
+    category: "stories",
+    year: "2025",
+    role: "UI Designer",
+    duration: "—",
+    tags: ["Web Design", "B2B", "产品网站", "企业官网"],
+    description: "为工业包装产品品牌设计的全流程企业官网，包含首页、产品中心、产品详情页与选型系统。",
+    overview: "以深蓝、白与橙点缀的配色体系，搭配大量留白与理性网格系统，呈现工业产品的专业感与品牌气质。",
+    challenge: "如何在信息密度较高的产品类目中，同时保持清晰的视觉层级与阅读节奏，并兼顾移动端的体验。",
+    accent: "#0a1630",
+    index: "007",
+    heroImage: ipHome,
+    images: [
+      { url: ipHome, alt: "首页", caption: "首页 — Hero 区、产品亮点与核心优势" },
+      { url: ipProd, alt: "产品中心", caption: "产品中心 — 分类导航与产品卡片" },
+      { url: ipSleeve, alt: "Sleeve Pack Containers 产品页", caption: "Sleeve Pack Containers — 产品概览与技术规格" },
+      { url: ipDetail, alt: "产品详情页模板", caption: "产品详情页模板 — 规格、配置、尺寸与选型系统" },
+    ],
+    horizontalStrip: [ipHome, ipProd, ipSleeve, ipDetail],
   },
 ];
 
